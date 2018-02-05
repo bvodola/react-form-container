@@ -1,6 +1,6 @@
 {
   "name": "react-form-container",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Forms with React made easier",
   "main": "build/index.js",
   "peerDependencies": {
