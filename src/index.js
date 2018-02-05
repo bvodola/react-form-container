@@ -6,6 +6,8 @@ import SelectField from './components/SelectField';
 import StateHandler from './components/StateHandler';
 import TextField from './components/TextField';
 
+import withScope from './components/hoc/withScope';
+
 export {
   CheckboxGroup,
   FormContainer,
@@ -13,5 +15,6 @@ export {
   RadioGroup,
   SelectField,
   StateHandler,
-  TextField
+  TextField,
+  withScope,
 };

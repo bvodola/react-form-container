@@ -1,5 +1,8 @@
 var path = require('path');
+var webpack = require('webpack');
+
 module.exports = {
+  devtool: 'cheap-module-source-map',
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -25,4 +28,13 @@ module.exports = {
     'react': 'commonjs react', // this line is just to use the React dependency of our parent-testing-project instead of using our own React.
     'react-dom': 'commonjs react-dom'
   },
+  plugins: [
+    HtmlWebpackPluginConfig,
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
+  ]
 }
