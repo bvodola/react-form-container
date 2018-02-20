@@ -9,6 +9,7 @@ class _ {
     return targetProp;
   }
 
+
   static set(obj, path, value) {
       var schema = obj;
       var pList = path.split('.');

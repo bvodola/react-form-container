@@ -21,17 +21,19 @@ const FormContainer = (props) => {
   let stateHandler = new StateHandler(props.scope);
 
   let formFields = [
-    'p', 'button', 'RaisedButton'
+    'p', 'button', 'RaisedButton', 'h2'
   ];
 
   let children = recursiveMap(props.children, function(child) {
 
+    const formFields = ['CheckboxGroup', 'MaskedTextField', 'RadioGroup', 'SelectField', 'TextField'];
 
     let field = typeof child.type.name !== 'undefined' ? child.type.name : child.type;
+    let scopedField = child.props.scoped;
 
-    return formFields.indexOf(field) === -1 ?
+    return formFields.indexOf(field) !== -1 || scopedField ?
       React.cloneElement(child, {stateHandler, scope: props.scope}):
-      React.cloneElement(child, {stateHandler});
+      React.cloneElement(child);
 
   });
 
