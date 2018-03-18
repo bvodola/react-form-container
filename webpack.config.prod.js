@@ -30,7 +30,10 @@ module.exports = {
     'material-ui': 'commonjs material-ui',
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: false,
+      mangle: false
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
