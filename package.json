@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "material-ui": "next",
+    "neo-async": "^2.5.0",
     "react": "^16.0.0",
     "vanilla-masker": "^1.2.0",
     "webpack": "^2.6.1"
